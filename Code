@@ -1,4 +1,5 @@
 import cairo
+import numpy
 import math
 import gi
 from gi.repository import Gtk
@@ -8,17 +9,17 @@ class Window (Gtk.Window):
     def __init__(self):
         super(Window, self).__init__()
         self.init_ui()
+        
     def init_ui(self):    
-
         darea = Gtk.DrawingArea()
         darea.connect("draw", self.on_draw)
         self.add(darea)
-
         self.set_title("GTK window")
         self.resize(737, 497)
         self.set_position(Gtk.WindowPosition.CENTER)
         self.connect("delete-event", Gtk.main_quit)
         self.show_all()
+        
     def on_draw(self, wid, cr):
         cr.set_source_rgb(222/255, 224/255, 202/255)
         cr.arc(368.5, 248.5, 205.1, 0,2*math.pi)
@@ -66,6 +67,17 @@ class Window (Gtk.Window):
         cr.move_to(722.70, 160.74)
         cr.line_to(669.94, 160.12)
         cr.line_to(608.59, 42.94)
+        cr.move_to(653.79, 192.66)
+        cr.line_to(655.58, 200.64)
+        cr.line_to(723.63, 432.84)
+        cr.curve_to(713.63, 427.84, 653.79, 417.84, 653.79, 192.66)
+        cr.move_to(496.12, 0)
+        cr.line_to(4.16, 478.99)
+        cr.line_to(94.46, 205.31)
+        cr.curve_to(84.46, 473.99, 84.46, 463.99, 84.46, 0)
+        cr.move_to(205.20, 196.43)
+        cr.line_to(670.42, 253.73)
+        cr.line_to(653.31, 193.46)
         cr.set_source_rgb(0.5, 1, 105/255)    
         cr.fill() 
         cr.move_to(153.24, 62.52)
@@ -124,6 +136,12 @@ class Window (Gtk.Window):
         cr.move_to(92.13, 179.57)
         cr.line_to(98.77, 160.74)
         cr.line_to(20.68, 160.77)
+        cr.move_to(394.06, 453.71)
+        cr.line_to(390.02, 450.71)
+        cr.line_to(396.08, 445.20)
+        cr.move_to(90.13, 178.90)
+        cr.line_to(96.44, 162.84)
+        cr.line_to(94.20, 160.75)
         cr.set_source_rgb(0.5, 1, 105/255)    
         cr.fill()
        
